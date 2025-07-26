@@ -97,7 +97,7 @@ async def send_cancel(client: Client, message: Message):
 async def save(client: Client, message: Message):
     if "https://t.me/" in message.text:
         if batch_temp.IS_BATCH.get(message.from_user.id) == False:
-            return await message.reply_text("**एक कार्य पहले से ही संसाधित हो रहा है। इसके पूरा होने तक प्रतीक्षा करें। यदि आप इस कार्य को रद्द करना चाहते हैं तो - /cancel** का उपयोग करें**")
+            return await message.reply_text("**एक कार्य पहले से ही संसाधित हो रहा है। इसके पूरा होने तक प्रतीक्षा करें। यदि आप इस कार्य को रद्द करना चाहते हैं तो - /cancel**")
         datas = message.text.split("/")
         temp = datas[-1].replace("?single","").split("-")
         fromID = int(temp[0].strip())
