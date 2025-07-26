@@ -61,15 +61,15 @@ async def send_start(client: Client, message: Message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
     buttons = [[
-        InlineKeyboardButton("❣️ Developer", url = "https://t.me/Viraj7e7")
+        InlineKeyboardButton("❣️ Developer", url = "https://t.me/LUCKY_y0")
     ],[
-        InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='http://t.me/MrLucky7e7_bot'),
+        InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='http://t.me/LUCKY_y0'),
         InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='http://t.me/MrLucky7e7_bot')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await client.send_message(
         chat_id=message.chat.id, 
-        text=f"<b>👋 Hi {message.from_user.mention}, I am Save Restricted Content Bot, I can send you restricted content by its post link.\n\nFor downloading restricted content /login first.\n\nKnow how to use bot by - /help</b>", 
+        text=f"<b>👋 Hi {message.from_user.mention}, मैं सेव रिस्ट्रिक्टेड कंटेंट बॉट हूं, मैं आपको इसके पोस्ट लिंक द्वारा प्रतिबंधित सामग्री भेज सकता हूं.\n\nFor downloading restricted content /login first.\n\nKnow how to use bot by - /help</b>", 
         reply_markup=reply_markup, 
         reply_to_message_id=message.id
     )
@@ -97,7 +97,7 @@ async def send_cancel(client: Client, message: Message):
 async def save(client: Client, message: Message):
     if "https://t.me/" in message.text:
         if batch_temp.IS_BATCH.get(message.from_user.id) == False:
-            return await message.reply_text("**One Task Is Already Processing. Wait For Complete It. If You Want To Cancel This Task Then Use - /cancel**")
+            return await message.reply_text("**एक कार्य पहले से ही संसाधित हो रहा है। इसके पूरा होने तक प्रतीक्षा करें। यदि आप इस कार्य को रद्द करना चाहते हैं तो - /cancel** का उपयोग करें**")
         datas = message.text.split("/")
         temp = datas[-1].replace("?single","").split("-")
         fromID = int(temp[0].strip())
